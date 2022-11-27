@@ -9221,7 +9221,7 @@ impl<'api> Actions<'api> {
     /// [GitHub API docs for list_workflow_run_artifacts](https://docs.github.com/rest/reference/actions#list-workflow-run-artifacts)
     ///
     /// ---
-    pub async fn list_workflow_run_artifacts_async(&self, owner: &str, repo: &str, run_id: i32, query_params: Option<impl Into<ActionsListWorkflowRunArtifactsParams>>) -> Result<GetActionsListWorkflowRunArtifactsResponse200, ActionsListWorkflowRunArtifactsError> {
+    pub async fn list_workflow_run_artifacts_async(&self, owner: &str, repo: &str, run_id: i64, query_params: Option<impl Into<ActionsListWorkflowRunArtifactsParams>>) -> Result<GetActionsListWorkflowRunArtifactsResponse200, ActionsListWorkflowRunArtifactsError> {
 
         let mut request_uri = format!("{}/repos/{}/{}/actions/runs/{}/artifacts", super::GITHUB_BASE_API_URL, owner, repo, run_id);
 
@@ -9264,7 +9264,7 @@ impl<'api> Actions<'api> {
     ///
     /// ---
     #[cfg(not(target_arch = "wasm32"))]
-    pub fn list_workflow_run_artifacts(&self, owner: &str, repo: &str, run_id: i32, query_params: Option<impl Into<ActionsListWorkflowRunArtifactsParams>>) -> Result<GetActionsListWorkflowRunArtifactsResponse200, ActionsListWorkflowRunArtifactsError> {
+    pub fn list_workflow_run_artifacts(&self, owner: &str, repo: &str, run_id: i64, query_params: Option<impl Into<ActionsListWorkflowRunArtifactsParams>>) -> Result<GetActionsListWorkflowRunArtifactsResponse200, ActionsListWorkflowRunArtifactsError> {
 
         let mut request_uri = format!("{}/repos/{}/{}/actions/runs/{}/artifacts", super::GITHUB_BASE_API_URL, owner, repo, run_id);
 
